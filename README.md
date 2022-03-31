@@ -1,4 +1,4 @@
-# How does it work
+# How does it work?
 
 This work is developed in ReactJS with Firebase Firestore
 

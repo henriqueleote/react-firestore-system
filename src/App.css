@@ -1,3 +1,9 @@
+/*  CSS   */
+
+.card-margin{
+  margin: 20px 0px;
+}
+
 .card-align-bottom-right{
   position: absolute;
   bottom: 10px;

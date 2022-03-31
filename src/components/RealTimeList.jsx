@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { collection, onSnapshot, orderBy, query, updateDoc } from "firebase/firestore";
 import { db } from '../lib/init-firebase'
 
 export default function RealTimeList() {
 
     const [tables, setTables] = useState([]);
-    const tablesCollectionRef = collection(db, 'mesas'); //todos
-    const q = query(collection(db, "mesas"), orderBy('tableName')); //com filtros
+    //const tablesCollectionRef = collection(db, 'mesas'); //todos
+    const q = query(collection(db, "mesas"), orderBy('tableID')); //com filtros
 
     useEffect(() => {
 
@@ -26,12 +26,13 @@ export default function RealTimeList() {
         <div className='row'>
             {
             tables.map(table => (
-                <div className='col-sm-3'>
-                    <div className='card customCard'>
+                <div className='col-sm-3 card-margin'>
+                    <div className='card'>
                         <div className='card-body'>
-                            <h5 className='card-title'>Titulo</h5>
-                            <p className='card-text' key={table.id}>{table.data.tableName}</p>
-                            <button type="button" id="insertButton" class="status-btn btn-red"></button>
+                            <h5 className='card-title' key={table.id}>Mesa {table.data.tableID}</h5>
+                            <p className='card-text' key={table.id}>{table.data.assistantStatus}</p>
+                            <p className='card-text' key={table.id}>{table.data.tableStatus}</p>
+                            <button type="Submit" class="status-btn btn-red"></button>
                         </div>
                     </div>
                 </div>

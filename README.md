@@ -9,3 +9,8 @@ Open [http://localhost:3000](http://localhost:3000) to view/use it in your brows
 
 The page will automatically reload when you make changes.\
 You may also see any lint errors in the console.
+
+
+## Autors
+
+- [@henriqueleote](https://www.github.com/henriqueleote)
